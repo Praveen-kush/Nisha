@@ -1,0 +1,151 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(120deg, #141e30, #243b55);
+    animation: backgroundAnimation 10s infinite alternate;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(120deg, #141e30, #243b55);
+    }
+    50% {
+        background: linear-gradient(120deg, #1e3c72, #2a5298);
+    }
+    100% {
+        background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    }
+}
+
+/* Full-screen watermark */
+.watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.1); /* Transparent watermark */
+    z-index: -1; /* Keeps it behind other content */
+    transform: rotate(-30deg);
+    pointer-events: none;
+}
+
+.watermark span {
+    animation: watermarkGlow 3s infinite alternate;
+}
+
+/* Glow animation for watermark */
+@keyframes watermarkGlow {
+    0% {
+        text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7;
+    }
+    100% {
+        text-shadow: 0 0 30px #ff6ec7, 0 0 50px #ff6ec7, 0 0 70px #ff6ec7;
+    }
+}
+
+/* Text container for amazing animations */
+.text-container {
+    margin: 50px;
+    text-align: center;
+}
+
+.text-container h1,
+.text-container h2,
+.text-container p {
+    margin: 20px auto;
+    width: 80%;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeSlideIn 3s forwards;
+}
+
+/* Sequential animations for text */
+.text-container h1 {
+    animation-delay: 0s;
+}
+
+.text-container h2 {
+    animation-delay: 1s;
+}
+
+.text-container p {
+    animation-delay: 2s;
+}
+
+/* Fade and slide-in animation */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrolling effects with parallax-like movement */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.section h1 {
+    font-size: 3rem;
+    color: #ff6ec7;
+    animation: bounce 2s infinite;
+}
+
+/* Bounce animation for section headings */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Styling for links or buttons */
+a.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px auto;
+    background: linear-gradient(90deg, #ff8c00, #ff0080);
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Button animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px #ff0080;
+    }
+    100% {
+        box-shadow: 0 0 30px #ff8c00;
+    }
+}
